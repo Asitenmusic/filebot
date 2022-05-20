@@ -37,7 +37,29 @@ def start_button(client):
             ],
         ]
         return buttons
-    if FORCE_SUB_CHANNEL1 and FORCE_SUB_CHANNEL2:
+    if FORCE_SUB_CHANNEL3 and not FORCE_SUB_CHANNEL1 and not FORCE_SUB_CHANNEL2 and not FORCE_SUB_CHANNEL4:
+        buttons = [
+            [
+                InlineKeyboardButton(text="ᴄʜᴀɴɴᴇʟ", url=client.invitelink3),
+            ],
+            [
+                InlineKeyboardButton(text="• ᴛᴇɴᴛᴀɴɢ sᴀʏᴀ •", callback_data="about"),
+                InlineKeyboardButton(text="• ᴛᴜᴛᴜᴘ •", callback_data="close"),
+            ],
+        ]
+        return buttons
+if FORCE_SUB_CHANNEL4 and not FORCE_SUB_CHANNEL1 and not FORCE_SUB_CHANNEL2 and not FORCE_SUB_CHANNEL3:
+        buttons = [
+            [
+                InlineKeyboardButton(text="ᴄʜᴀɴɴᴇʟ", url=client.invitelink4),
+            ],
+            [
+                InlineKeyboardButton(text="• ᴛᴇɴᴛᴀɴɢ sᴀʏᴀ •", callback_data="about"),
+                InlineKeyboardButton(text="• ᴛᴜᴛᴜᴘ •", callback_data="close"),
+            ],
+        ]
+        return buttons
+    if FORCE_SUB_CHANNEL1 and FORCE_SUB_CHANNEL2 and FORCE_SUB_CHANNEL3 and FORCE_SUB_CHANNEL4:
         buttons = [
             [
                 InlineKeyboardButton(text="• ᴛᴇɴᴛᴀɴɢ sᴀʏᴀ •", callback_data="about"),
@@ -45,6 +67,8 @@ def start_button(client):
             [
                 InlineKeyboardButton(text="ᴄʜᴀɴɴᴇʟ", url=client.invitelink),
                 InlineKeyboardButton(text="ᴄʜᴀɴɴᴇʟ", url=client.invitelink2),
+                InlineKeyboardButton(text="ᴄʜᴀɴɴᴇʟ", url=client.invitelink3),
+                InlineKeyboardButton(text="ᴄʜᴀɴɴᴇʟ", url=client.invitelink4),
             ],
             [InlineKeyboardButton(text="• ᴛᴜᴛᴜᴘ •", callback_data="close")],
         ]
@@ -52,7 +76,7 @@ def start_button(client):
 
 
 def fsub_button(client, message):
-    if not FORCE_SUB_CHANNEL1 and FORCE_SUB_CHANNEL2:
+    if not FORCE_SUB_CHANNEL1 and FORCE_SUB_CHANNEL2 and not FORCE_SUB_CHANNEL3 and not FORCE_SUB_CHANNEL4:
         buttons = [
             [
                 InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink2),
@@ -70,7 +94,7 @@ def fsub_button(client, message):
         except IndexError:
             pass
         return buttons
-    if FORCE_SUB_CHANNEL1 and not FORCE_SUB_CHANNEL2:
+    if FORCE_SUB_CHANNEL1 and not FORCE_SUB_CHANNEL2 and not FORCE_SUB_CHANNEL3 and not FORCE_SUB_CHANNEL4:
         buttons = [
             [
                 InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink),
@@ -88,11 +112,49 @@ def fsub_button(client, message):
         except IndexError:
             pass
         return buttons
-    if FORCE_SUB_CHANNEL1 and FORCE_SUB_CHANNEL2:
+    if FORCE_SUB_CHANNEL3 and not FORCE_SUB_CHANNEL1 and not FORCE_SUB_CHANNEL2 and not FORCE_SUB_CHANNEL4:
+        buttons = [
+            [
+                InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink3),
+            ],
+        ]
+        try:
+            buttons.append(
+                [
+                    InlineKeyboardButton(
+                        text="ᴄᴏʙᴀ ʟᴀɢɪ",
+                        url=f"https://t.me/{client.username}?start={message.command[1]}",
+                    )
+                ]
+            )
+        except IndexError:
+            pass
+        return buttons
+    if FORCE_SUB_CHANNEL4 and not FORCE_SUB_CHANNEL1 and not FORCE_SUB_CHANNEL2 and not FORCE_SUB_CHANNEL3:
+        buttons = [
+            [
+                InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink4),
+            ],
+        ]
+        try:
+            buttons.append(
+                [
+                    InlineKeyboardButton(
+                        text="ᴄᴏʙᴀ ʟᴀɢɪ",
+                        url=f"https://t.me/{client.username}?start={message.command[1]}",
+                    )
+                ]
+            )
+        except IndexError:
+            pass
+        return buttons
+    if FORCE_SUB_CHANNEL1 and FORCE_SUB_CHANNEL2 and FORCE_SUB_CHANNEL3 and FORCE_SUB_CHANNEL4:
         buttons = [
             [
                 InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink),
                 InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink2),
+                InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink3),
+                InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink4),
             ],
         ]
         try:
