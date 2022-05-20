@@ -5,7 +5,7 @@
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
 
 from bot import Bot
-from config import CHANNEL, GROUP, OWNER
+from config import CHANNEL1, CHANNEL2, CHANNEL3, CHANNEL4, OWNER
 
 
 @Bot.on_callback_query()
